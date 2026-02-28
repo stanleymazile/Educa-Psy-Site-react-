@@ -1,3 +1,5 @@
+import { imageConfig } from './imageConfig';
+
 export interface NewsArticle {
   id: string;
   title: string;
@@ -32,7 +34,7 @@ export const newsArticles: NewsArticle[] = [
       ### Nos recommandations
       Educa-Psy propose des formations spécifiques pour aider le corps enseignant à créer un environnement sécurisant et à orienter les élèves vers les professionnels adéquats.
     `,
-    image: "https://picsum.photos/seed/news1/1200/800"
+    image: imageConfig.news.article1
   },
   {
     id: "ateliers-parents-ados",
@@ -54,7 +56,7 @@ export const newsArticles: NewsArticle[] = [
 
       Rejoignez une communauté de parents pour partager vos expériences et repartir avec des outils concrets.
     `,
-    image: "https://picsum.photos/seed/news2/1200/800"
+    image: imageConfig.news.article2
   },
   {
     id: "numerique-allie-ennemi",
@@ -75,6 +77,6 @@ export const newsArticles: NewsArticle[] = [
       ### La règle d'or : l'accompagnement
       L'écran ne doit jamais remplacer l'interaction humaine. Le secret réside dans le contenu choisi et le temps partagé entre l'enfant et l'adulte autour de l'outil numérique.
     `,
-    image: "https://picsum.photos/seed/news3/1200/800"
+    image: imageConfig.news.article3
   }
 ];

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Brain, Users2, GraduationCap, HeartPulse, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
+import { imageConfig } from '../data/imageConfig';
 
 const services = [
   {
@@ -45,11 +46,21 @@ const services = [
 export function Services() {
   return (
     <div className="space-y-12 pb-20">
-      <div className="max-w-3xl">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">Nos Services</h1>
-        <p className="text-lg text-slate-600">
-          Nous proposons une gamme complète de services pour répondre aux besoins éducatifs et psychologiques de notre communauté.
-        </p>
+      <div className="relative h-64 md:h-80 rounded-3xl overflow-hidden mb-12">
+        <img 
+          src={imageConfig.services.header} 
+          alt="Services Header" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8 md:p-12">
+          <div className="max-w-3xl text-white">
+            <h1 className="text-4xl font-bold mb-4">Nos Services</h1>
+            <p className="text-lg text-slate-200">
+              Nous proposons une gamme complète de services pour répondre aux besoins éducatifs et psychologiques de notre communauté.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

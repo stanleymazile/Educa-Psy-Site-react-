@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Users, Heart, BookOpen, Star, GraduationCap, Brain, Search, Gamepad2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
+import { imageConfig } from '../data/imageConfig';
 
 const stats = [
   { label: 'Bénéficiaires', value: '5000', suffix: '+', icon: Users },
@@ -23,7 +24,18 @@ export function Home() {
   return (
     <div className="space-y-20 pb-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-8 md:p-16 lg:p-24">
+      <section className="relative overflow-hidden rounded-3xl bg-slate-900 text-white min-h-[500px] flex items-center p-8 md:p-16 lg:p-24">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={imageConfig.home.hero} 
+            alt="Hero Background" 
+            className="w-full h-full object-cover opacity-30"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+        </div>
+
         <div className="relative z-10 max-w-3xl">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -139,7 +151,7 @@ export function Home() {
         </div>
         <div className="relative">
           <img 
-            src="https://picsum.photos/seed/educapsy/800/600" 
+            src={imageConfig.home.mission} 
             alt="Collaboration" 
             className="rounded-3xl shadow-2xl"
             referrerPolicy="no-referrer"
@@ -150,6 +162,27 @@ export function Home() {
             </p>
             <p className="text-sm text-slate-500 mt-2">— Nelson Mandela</p>
           </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="space-y-10 py-10 border-t border-slate-100">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Ils nous font confiance</h2>
+          <p className="text-slate-500 text-sm">
+            Nous collaborons avec des institutions de renom pour garantir l'excellence de nos services.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          {imageConfig.home.partners.map((src, i) => (
+            <img 
+              key={i}
+              src={src} 
+              alt={`Partenaire ${i + 1}`}
+              className="h-8 md:h-10 object-contain"
+              referrerPolicy="no-referrer"
+            />
+          ))}
         </div>
       </section>
     </div>

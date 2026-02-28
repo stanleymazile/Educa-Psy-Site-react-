@@ -11,6 +11,7 @@ import { Research } from './pages/Research';
 import { Mentorship } from './pages/Mentorship';
 import { Games } from './pages/Games';
 import { ArticleDetail } from './pages/ArticleDetail';
+import { Resources } from './pages/Resources';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="jeux" element={<Games />} />
           <Route path="news" element={<News />} />
           <Route path="news/:id" element={<ArticleDetail />} />
+          <Route path="ressources" element={<Resources />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

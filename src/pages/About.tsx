@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Target, Eye, Users, Award, HeartPulse, Sparkles } from 'lucide-react';
+import { imageConfig } from '../data/imageConfig';
 
 const values = [
   { title: "Empathie", description: "L'écoute active et la compréhension profonde sont au cœur de nos interventions.", icon: HeartPulse },
@@ -31,7 +32,7 @@ export function About() {
         </div>
         <div className="relative">
           <img 
-            src="https://picsum.photos/seed/team/800/600" 
+            src={imageConfig.about.team} 
             alt="Notre équipe" 
             className="rounded-3xl shadow-xl"
             referrerPolicy="no-referrer"
