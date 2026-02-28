@@ -6,14 +6,12 @@ import {
   Briefcase, 
   Mail, 
   Newspaper, 
-  BrainCircuit,
   X,
   Facebook,
   Instagram,
   Linkedin,
   Twitter,
   Globe,
-  ChevronDown,
   GraduationCap,
   Brain,
   Search,
@@ -22,6 +20,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
+import { Logo } from './Logo';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -64,12 +63,7 @@ export const Sidebar = React.memo(({ isOpen, setIsOpen }: SidebarProps) => {
           id="main-sidebar"
         >
           <div className="p-6 flex items-center justify-between border-b border-slate-100">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
-                <BrainCircuit size={20} />
-              </div>
-              <span className="text-lg font-bold text-slate-900 tracking-tight">Educa-Psy</span>
-            </div>
+            <Logo size="md" />
             <button 
               onClick={() => setIsOpen(false)}
               className="p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"

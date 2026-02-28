@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrainCircuit, Bell, Search, User, Menu, X } from 'lucide-react';
+import { Bell, Search, User, Menu, X } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -10,10 +11,7 @@ export function Header({ onToggleSidebar, isSidebarOpen }: HeaderProps) {
   return (
     <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-8 sticky top-0 z-30">
       <div className="flex items-center gap-4">
-        <div className="lg:hidden flex items-center gap-2">
-          <BrainCircuit className="text-indigo-600" size={24} />
-          <span className="font-bold text-slate-900">Educa-Psy</span>
-        </div>
+        <Logo size="sm" />
         <div className="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-1.5 gap-2 w-64 lg:w-96">
           <Search size={18} className="text-slate-400" />
           <input 

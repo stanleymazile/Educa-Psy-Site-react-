@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrainCircuit, Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo';
 
 export function Footer() {
   return (
@@ -8,12 +9,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
-                <BrainCircuit size={24} />
-              </div>
-              <span className="text-xl font-bold text-slate-900 tracking-tight">Educa-Psy</span>
-            </div>
+            <Logo size="md" />
             <p className="text-slate-500 text-sm leading-relaxed">
               Soutenir l'éducation et la santé mentale pour un avenir meilleur. Notre mission est d'accompagner chaque individu vers son plein potentiel.
             </p>
