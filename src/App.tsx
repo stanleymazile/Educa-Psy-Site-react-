@@ -12,6 +12,7 @@ import { Mentorship } from './pages/Mentorship';
 import { Games } from './pages/Games';
 import { ArticleDetail } from './pages/ArticleDetail';
 import { Resources } from './pages/Resources';
+import { Partners } from './pages/Partners';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="news" element={<News />} />
           <Route path="news/:id" element={<ArticleDetail />} />
           <Route path="ressources" element={<Resources />} />
+          <Route path="partenaires" element={<Partners />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

@@ -61,6 +61,21 @@ export const imageConfig = {
     article3: "https://picsum.photos/seed/news3/1200/800",
   },
 
+  // Team Members
+  team: {
+    member1: "https://picsum.photos/seed/member1/400/400",
+    member2: "https://picsum.photos/seed/member2/400/400",
+    member3: "https://picsum.photos/seed/member3/400/400",
+    member4: "https://picsum.photos/seed/member4/400/400",
+  },
+
+  // Testimonials
+  testimonials: {
+    avatar1: "https://picsum.photos/seed/avatar1/100/100",
+    avatar2: "https://picsum.photos/seed/avatar2/100/100",
+    avatar3: "https://picsum.photos/seed/avatar3/100/100",
+  },
+
   // Default placeholder for missing images
   placeholder: "https://picsum.photos/seed/placeholder/800/600"
 };

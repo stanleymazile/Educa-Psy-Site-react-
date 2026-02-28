@@ -35,19 +35,10 @@ export function Footer() {
               <li><Link to="/" className="hover:text-indigo-600 transition-colors">Accueil</Link></li>
               <li><Link to="/apropos" className="hover:text-indigo-600 transition-colors">À Propos</Link></li>
               <li><Link to="/services" className="hover:text-indigo-600 transition-colors">Nos Services</Link></li>
+              <li><Link to="/partenaires" className="hover:text-indigo-600 transition-colors">Partenaires</Link></li>
               <li><Link to="/ressources" className="hover:text-indigo-600 transition-colors">Ressources</Link></li>
               <li><Link to="/news" className="hover:text-indigo-600 transition-colors">Actualités</Link></li>
               <li><Link to="/contact" className="hover:text-indigo-600 transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-slate-900 mb-6">Services</h4>
-            <ul className="space-y-4 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-indigo-600 transition-colors">Consultation Psy</a></li>
-              <li><a href="#" className="hover:text-indigo-600 transition-colors">Soutien Scolaire</a></li>
-              <li><a href="#" className="hover:text-indigo-600 transition-colors">Ateliers Parents</a></li>
-              <li><a href="#" className="hover:text-indigo-600 transition-colors">Médiation</a></li>
             </ul>
           </div>
 

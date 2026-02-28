@@ -17,7 +17,8 @@ import {
   Search,
   Users,
   Gamepad2,
-  BookOpen
+  BookOpen,
+  Building2
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
@@ -38,6 +39,7 @@ const navItems = [
   { name: 'Mentorat', icon: Users, path: '/mentorat' },
   { name: 'Jeux', icon: Gamepad2, path: '/jeux' },
   { name: 'Ressources', path: '/ressources', icon: BookOpen },
+  { name: 'Partenaires', path: '/partenaires', icon: Building2 },
   { name: 'Actualités', path: '/news', icon: Newspaper },
   { name: 'Contact', path: '/contact', icon: Mail },
 ];

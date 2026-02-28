@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Users, Heart, BookOpen, Star, GraduationCap, Brain, Search, Gamepad2 } from 'lucide-react';
+import { ArrowRight, Users, Heart, BookOpen, Star, GraduationCap, Brain, Search, Gamepad2, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
 import { imageConfig } from '../data/imageConfig';
+import { testimonials } from '../data/testimonialsData';
 
 const stats = [
   { label: 'Bénéficiaires', value: '5000', suffix: '+', icon: Users },
@@ -165,13 +166,73 @@ export function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-slate-50 -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-12 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold text-slate-900">Ce que disent nos bénéficiaires</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Leur confiance est notre plus belle réussite. Découvrez les témoignages de ceux que nous accompagnons.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between relative"
+              >
+                <div className="absolute top-6 right-8 text-indigo-100">
+                  <Quote size={48} />
+                </div>
+                <div className="space-y-6 relative z-10">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        size={16} 
+                        className={cn(i < testimonial.rating ? "text-amber-400 fill-amber-400" : "text-slate-200")} 
+                      />
+                    ))}
+                  </div>
+                  <p className="text-slate-600 italic leading-relaxed">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+                <div className="mt-8 flex items-center gap-4">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name} 
+                    className="w-12 h-12 rounded-full object-cover border-2 border-indigo-50"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm">{testimonial.name}</h4>
+                    <p className="text-slate-500 text-xs">{testimonial.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Partners Section */}
       <section className="space-y-10 py-10 border-t border-slate-100">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Ils nous font confiance</h2>
-          <p className="text-slate-500 text-sm">
-            Nous collaborons avec des institutions de renom pour garantir l'excellence de nos services.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-end gap-6 max-w-5xl mx-auto px-4">
+          <div className="max-w-xl">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Ils nous font confiance</h2>
+            <p className="text-slate-500 text-sm">
+              Nous collaborons avec des institutions de renom pour garantir l'excellence de nos services.
+            </p>
+          </div>
+          <Link to="/partenaires" className="text-indigo-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+            Voir tous nos partenaires <ArrowRight size={16} />
+          </Link>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
           {imageConfig.home.partners.map((src, i) => (
